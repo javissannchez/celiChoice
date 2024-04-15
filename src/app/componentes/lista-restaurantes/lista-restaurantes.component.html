@@ -1,0 +1,12 @@
+<div>
+  @for (restaurante of restaurantes; track $index)
+  {
+  <div>
+    <h2>{{ restaurante.name }}</h2>
+    <p>{{ restaurante.category }}</p>
+    <p>{{ restaurante.tel }}</p>
+    <p>{{ restaurante.dir }}</p>
+    <p>{{ restaurante.prov }}</p>
+  </div>
+  }
+</div>
