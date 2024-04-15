@@ -1,24 +1,16 @@
-import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ListaRestaurantesComponent } from './componentes/lista-restaurantes/lista-restaurantes.component';
+import { ListaRestaurantesComponent } from './dominios/compartido/lista-restaurantes/lista-restaurantes.component';
+import { PrincipalComponent } from './dominios/paginas/principal/principal.component';
+import { HeaderComponent } from './dominios/compartido/header/header.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, ListaRestaurantesComponent],
+  imports: [RouterOutlet, HeaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit
-{
-  restaurantes: any[] = [];
-
-  ngOnInit() {
-    fetch('/assets/soloRestaurantes.json')
-      .then(response => response.json())
-      .then(data => {
-        this.restaurantes = data;
-      });
-  }
+export class AppComponent {
+  title = 'celiApp';
 }
